@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="johnny-31 - jw loo.png" type="image/x-icon">
+  <title>Johnny Webber - Launch Announcement</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Oswald:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oswald', sans-serif; /* Normal text uses Oswald */
+      background-color: #000;
+      color: #FFD700;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Bokor', cursive; /* All h1 headers use Bokor */
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #FFD700;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1s ease-out, visibility 1s ease-out;
+    }
+
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    header {
+      background-color: #000;
+      color: #FFD700;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 40px 20px;
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+    }
+
+    /* Carousel Container */
+    .carousel-container {
+      position: relative;
+      max-width: 90%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 1s ease;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain; /* Prevent cropping */
+      display: block;
+      margin: auto;
+      transition: transform 0.3s ease;
+      cursor: grab;
+    }
+
+    .carousel img:active {
+      cursor: grabbing;
+    }
+
+    .zoom-pan-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .zoom-pan-container img:hover {
+      transform: scale(1.1); /* Zoom effect */
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-buttons button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #FFD700;
+      font-size: 1.5em;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .carousel-buttons button:hover {
+      background: #FFD700;
+      color: #000;
+    }
+
+    footer {
+      background-color: #000;
+      color: #FFD700;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    .rsvp iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 800px;
+      margin: 20px auto;
+      display: block;
+      border: none;
+    }
+
+    @media (min-width: 769px) {
+      .carousel-container {
+        max-width: 70%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-container {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <img src="johnny-webber-prototype-front.png" alt="Brand Logo">
+    <div class="loading-animation"></div>
+  </div>
+
+  <header>
+    <img src="johnny-webber-prototype-front.png" alt="Brand Logo">
+    <nav>
+      <a href="#rsvp">RSVP</a>
+      <a href="#exclusive">Exclusive Look</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Johnny Webber</h1>
+    <p>🎉 We're launching on <strong>5-6 December 2024</strong> 🎉</p>
+  </section>
+
+  <section id="rsvp" class="rsvp">
+    <h2>RSVP Now</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSce_mO9N0BTzL5jOB5oXd0rUHUsgF89cd0IVgRO_g0PD-4zjQ/viewform?embedded=true">
+      Loading…
+    </iframe>
+  </section>
+
+  <section id="exclusive" class="exclusive">
+    <h2>The Wait Is Over</h2>
+    <p>A sneak peek into the collection.</p>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <div class="zoom-pan-container"><img src="IMG-20241115-WA0080.jpg" alt="Exclusive Look 1"></div>
+        <div class="zoom-pan-container"><img src="IMG-20241115-WA0077.jpg" alt="Exclusive Look 2"></div>
+        <div class="zoom-pan-container"><img src="IMG-20241115-WA0032.jpg" alt="Exclusive Look 3"></div>
+        <div class="zoom-pan-container"><img src="IMG-20241115-WA0044.jpg" alt="Exclusive Look 4"></div>
+      </div>
+      <div class="carousel-buttons">
+        <button id="prevBtn">❮</button>
+        <button id="nextBtn">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Follow us on Instagram: <a href="https://instagram.com/johhny.webber.clothing" target="_blank">@johhny.webber.clothing</a></p>
+    <p>&copy; 2024 Johnny Webber. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Loading Screen Fade-Out
+    window.addEventListener("load", () => {
+      const loadingScreen = document.getElementById("loadingScreen");
+      setTimeout(() => {
+        loadingScreen.classList.add("hidden");
+      }, 3000);
+    });
+
+    // Carousel Logic
+    const carousel = document.getElementById("carousel");
+    const images = carousel.children;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      for (let i = 0; i < images.length; i++) {
+        images[i].style.display = i === currentIndex ? "block" : "none";
+      }
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      updateCarousel();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    }, 10000); // Change every 10 seconds
+
+    updateCarousel();
+  </script>
+</body>
+</html>
