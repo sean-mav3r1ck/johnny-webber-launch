@@ -8,6 +8,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Oswald:wght@400&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling effect */
+    }
+
     body {
       margin: 0;
       font-family: 'Oswald', sans-serif; /* Normal text uses Oswald */
@@ -87,6 +91,7 @@
       text-decoration: none;
       font-size: 1.2em;
       transition: color 0.3s ease;
+      margin: 0 10px;
     }
 
     nav a:hover {
@@ -282,10 +287,9 @@
     setInterval(() => {
       currentIndex = (currentIndex + 1) % images.length;
       updateCarousel();
-    }, 10000); // Change every 10 seconds
+    }, 3000);
 
     updateCarousel();
   </script>
 </body>
 </html>
-
